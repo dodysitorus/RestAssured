@@ -2,6 +2,7 @@ import static io.restassured.RestAssured.*;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import static org.hamcrest.CoreMatchers.equalTo;
 
 public class Test01_GET {
     public static void main(String[] args) {
@@ -26,6 +27,6 @@ public class Test01_GET {
                 .get("https://reqres.in/api/users?page=2")
                 .then()
                 .statusCode(200)
-                .body();
+                .body("data.id[0]", equalTo(7));
     }
 }
