@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <parameter name="userId" value="2"></parameter>
+    <test verbose="2" preserve-order="true"
+          name="D:/self/Github/RestAssured/FirstRestAssured/src/main/java/DataDrivenExamples/Example1.java">
+        <classes>
+            <class name="DataDrivenExamples.Example1">
+                <methods>
+                    <include name="test_post"/>
+                    <include name="test_delete"/>
+                    <include name="test_delete_parameter"/></methods>
+            </class>
+        </classes>
+    </test>
+</suite>
