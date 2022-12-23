@@ -23,10 +23,26 @@ public class Test01_GET {
     }
     @Test
     void test_02(){
-        given()
-                .get("https://reqres.in/api/users?page=2")
-                .then()
-                .statusCode(200)
-                .body("data.id[0]", equalTo(7));
+        for (int i = 1; i < 3; i++) {
+            given()
+                    .get("https://reqres.in/api/users?page=2")
+                    .then()
+                    .statusCode(200)
+                    .body("data.id[0]", equalTo(7));
+            System.out.println("Berhasil melakukan hit sebanyak "+i);
+        }
+
+//        int i = 1;
+//        while (i < 3){
+//            given()
+//                    .get("https://reqres.in/api/users?page=2")
+//                    .then()
+//                    .statusCode(200)
+//                    .body("data.id[0]", equalTo(7));
+//            i++;
+//        }
+//        System.out.println("Berhasil hit API sebanyak "+i+" kali");
     }
+
 }
+
